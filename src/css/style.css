@@ -1,0 +1,293 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background: #1C2128;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 579px) {
+  body {
+    padding: 1.2rem 0;
+  }
+}
+
+.container {
+  width: 72rem;
+  max-width: 95%;
+  height: auto;
+  color: #ADBAC7;
+}
+.container .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 4.8rem;
+}
+@media (max-width: 579px) {
+  .container .header {
+    margin: 0 0 2.4rem;
+  }
+}
+.container .header .title {
+  font-family: "Mulish", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.4rem;
+}
+.container .header .theme {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 0.8rem;
+}
+.container .header .theme input[type=checkbox] {
+  appearance: none;
+  position: relative;
+  width: 3.2rem;
+  height: 1.6rem;
+  background: #FEFEFE;
+  border-radius: 1.6rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.container .header .theme input[type=checkbox]:checked {
+  background: #2B3038;
+}
+.container .header .theme input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #32aa60;
+  border-radius: 50%;
+  top: 0.2rem;
+  left: 0.2rem;
+  transition: 0.2s ease-in-out;
+}
+.container .header .theme input:checked[type=checkbox]::before {
+  left: 1.8rem;
+}
+.container .search {
+  width: 100%;
+  height: 5.6rem;
+  margin: 0 0 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  background: #2B3038;
+  border-radius: 1.2rem;
+}
+@media (max-width: 579px) {
+  .container .search {
+    padding: 0.8rem 0.8rem 0.8rem 0;
+  }
+}
+.container .search i {
+  font-size: 2.4rem;
+  color: #667283;
+  margin: 0 0 0 1rem;
+}
+@media (max-width: 579px) {
+  .container .search i {
+    display: none;
+  }
+}
+.container .search input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0 1rem;
+  padding: 0.8rem;
+  background: transparent;
+  font-family: "Space Mono", monospace;
+  font-size: 1.4rem;
+  color: #ADBAC7;
+  border: none;
+}
+.container .search input::placeholder {
+  font-family: "Space Mono", monospace;
+  color: #ADBAC7;
+  opacity: 0.5;
+}
+.container .search input:focus {
+  outline: none;
+}
+.container .search input:focus::placeholder {
+  opacity: 0;
+}
+.container .search .not-find {
+  display: none;
+  color: #FC3737;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  margin: 0 1rem 0 0;
+}
+.container .search .btn-search {
+  width: auto;
+  height: 100%;
+  padding: 0 1.6rem;
+  background: #444C56;
+  font-family: "Space Mono", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ADBAC7;
+  border: none;
+  border-radius: 0.6rem;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.container .search .btn-search:hover {
+  background: #1C2128;
+}
+.container .result {
+  display: none;
+  align-items: flex-start;
+  gap: 2.4rem;
+  background: #2B3038;
+  border-radius: 1.2rem;
+  padding: 4.8rem;
+}
+@media (max-width: 579px) {
+  .container .result {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 2.2rem 1.6rem 1.6rem;
+    gap: 1rem;
+  }
+}
+.container .result .img-user {
+  width: 12.4rem;
+  height: 12.4rem;
+  border-radius: 50%;
+}
+@media (max-width: 579px) {
+  .container .result .img-user {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+.container .result .user-info {
+  display: flex;
+  flex-direction: column;
+}
+.container .result .user-info .box-user {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .box-user {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 3.2rem;
+    gap: 1.2rem;
+  }
+}
+.container .result .user-info .box-user .user {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .box-user .user {
+    align-items: center;
+  }
+}
+.container .result .user-info .box-user .user .name {
+  font-family: "Mulish", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.container .result .user-info .box-user .user .username {
+  font-size: 1.4rem;
+  color: #667283;
+}
+.container .result .user-info .box-user .join {
+  font-size: 1.4rem;
+}
+.container .result .user-info .description {
+  font-size: 1.4rem;
+  text-align: justify;
+  margin: 0 0 0.8rem;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .description {
+    margin: 0 0 1.6rem;
+  }
+}
+.container .result .user-info .numbers {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 3.2rem;
+  margin: 0 0 4.8rem;
+  background: #1C2128;
+  border-radius: 0.8rem;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .numbers {
+    padding: 1rem 1.4rem;
+    margin: 0 0 3.2rem;
+  }
+}
+.container .result .user-info .numbers .box {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .numbers .box {
+    align-items: center;
+  }
+}
+.container .result .user-info .numbers .box .text {
+  font-size: 1.4rem;
+  color: #667283;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .numbers .box .text {
+    font-size: 1.2rem;
+  }
+}
+.container .result .user-info .numbers .box .number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .numbers .box .number {
+    font-size: 1.8rem;
+  }
+}
+.container .result .user-info .social {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .social {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.container .result .user-info .social .box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  opacity: 0.5;
+}
+@media (max-width: 579px) {
+  .container .result .user-info .social .box {
+    gap: 1.4rem;
+  }
+}
+.container .result .user-info .social .box i {
+  font-size: 1.8rem;
+}
+.container .result .user-info .social .box a {
+  color: #ADBAC7;
+}
+
+/*# sourceMappingURL=style.css.map */

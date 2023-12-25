@@ -23,19 +23,19 @@
             <div class="header">
                 <h2 class="title">Devfinder</h2>
                 <div class="theme">
-                    <p class="theme-name">Light</p>
-                    <input type="checkbox" name="theme-color" id="theme-color" class="icon-theme">
+                    <i class="bi bi-sun-fill"></i>
+                    <input type="checkbox" name="theme-color" id="theme-color" class="icon-theme" checked>
+                    <i class="bi bi-moon-stars-fill"></i>
                 </div>
             </div>
-            <div class="search">
-                <form action="#" method="get">
-                    <i class="bi bi-search"></i>
-                    <input type="text" name="search" id="search" placeholder="Search GitHub username..." required>
-                    <button id="btn-search" class="btn-search">Search</button>
-                </form>
-            </div>
+            <form action="#" method="get" class="search" id="search">
+                <i class="bi bi-search"></i>
+                <input type="text" name="search" id="search" placeholder="Search GitHub username...">
+                <p class="not-find">User not find!</p>
+                <button id="btn-search" class="btn-search">Search</button>
+            </form>
             <div class="result">
-                <img src="https://placehold.co/124x124" alt="User">
+                <img src="./src/img/user.png" alt="User" class="img-user">
                 <div class="user-info">
                     <div class="box-user">
                         <div class="user">
@@ -44,10 +44,10 @@
                         </div>
                         <p class="join">Joined 05 Jan 2021</p>
                     </div>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum cum maiores esse voluptates quas blanditiis deserunt. Praesentium quo, perspiciatis eaque nisi aut modi reprehenderit quam temporibus, eius enim placeat. Porro!</p>
+                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum cum maiores esse voluptates quas blanditiis deserunt.</p>
                     <div class="numbers">
                         <div class="box">
-                            <p class="text">Repos</p>
+                            <p class="text">Repositories</p>
                             <p class="number" id="repository">100</p>
                         </div>
                         <div class="box">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="box">
                             <i class="bi bi-buildings-fill"></i>
-                            <p class="text" id="company">Empresa</p>
+                            <p class="text" id="company">Company</p>
                         </div>
                     </div>
                 </div>
