@@ -23,7 +23,7 @@ body
         justify-content: space-between
         align-items: center
         margin: 0 0 4.8rem
-        @include mixins.mobile 
+        @include mixins.mobile
             margin: 0 0 2.4rem
 
         .title
@@ -133,7 +133,7 @@ body
                 background: root.$btn-hover-dark
 
     .result
-        display: none
+        display: flex
         align-items: flex-start
         gap: 2.4rem
         background: root.$box-dark
@@ -158,11 +158,13 @@ body
         .user-info
             display: flex
             flex-direction: column
+            width: 100%
 
             .box-user
                 display: flex
                 justify-content: space-between
-                margin: 0 0 2rem
+                align-items: flex-start
+                margin: 0 0 2.4rem
                 @include mixins.mobile
                     flex-direction: column
                     align-items: center
@@ -181,10 +183,22 @@ body
                         font-weight: 800
 
                     .username
-                        font-size: 1.4rem
-                        color: root.$text-nd-dark
-                .join
+                        a
+                            font-size: 1.4rem
+                            font-weight: 400
+                            color: root.$text-nd-dark
+
+                .box-location
+                    display: flex
+                    align-items: center
+                    gap: .8rem
                     font-size: 1.4rem
+                    @include mixins.mobile
+                        gap: 1.4rem
+
+                    .text
+                        font-weight: 400
+
 
             .description
                 font-size: 1.4rem
@@ -197,7 +211,7 @@ body
                 display: flex
                 justify-content: space-between
                 padding: 1.4rem 3.2rem
-                margin: 0 0 4.8rem
+                margin: 0 0 3.2rem
                 background: root.$bg-dark
                 border-radius: .8rem
                 @include mixins.mobile
@@ -222,24 +236,41 @@ body
                         @include mixins.mobile
                             font-size: 1.8rem
 
-            .social
-                display: grid
-                grid-template-columns: repeat(2, 1fr)
-                gap: 1.2rem
-                @include mixins.mobile
-                    grid-template-columns: repeat(1, 1fr)
+            .repos
+                display: flex
+                flex-direction: column
+                width: 100%
+                height: auto
+                gap: .8rem
 
-                .box
+                .repos-title
                     display: flex
                     align-items: center
                     gap: .8rem
-                    font-size: 1.4rem
-                    opacity: .5
-                    @include mixins.mobile
-                        gap: 1.4rem
 
                     i
                         font-size: 1.8rem
 
-                    a
-                        color: root.$text-st-dark
+                    h3
+                        font-size: 1.4rem
+                        font-weight: 400
+
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    gap: .8rem
+
+                    li
+                        padding: .6rem 1.2rem
+                        background: root.$bg-dark
+                        border-radius: .4rem
+                        transition: .2s ease-in-out
+                        
+                        &:hover
+                            background: darken(#1C2128, 2.5%)
+
+                        a
+                            font-size: 1.2rem
+                            color: root.$text-nd-dark
+                            @include mixins.mobile
+                                font-size: 1rem

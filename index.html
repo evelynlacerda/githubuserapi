@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GitHub User Search</title>
+        <link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon">
 
         <link rel="stylesheet" href="./src/css/reset.css">
         <link rel="stylesheet" href="./src/css/style.css">
@@ -20,68 +21,91 @@
 
     <body>
         <div class="container">
-            <div class="header">
+            <header class="header">
                 <h2 class="title">Devfinder</h2>
                 <div class="theme">
                     <i class="bi bi-sun-fill"></i>
                     <input type="checkbox" name="theme-color" id="theme-color" class="icon-theme" checked>
                     <i class="bi bi-moon-stars-fill"></i>
                 </div>
-            </div>
-            <form action="#" method="get" class="search" id="search">
+            </header>
+            <div class="search" id="search">
                 <i class="bi bi-search"></i>
                 <input type="text" name="search" id="search" placeholder="Search GitHub username...">
                 <p class="not-find">User not find!</p>
                 <button id="btn-search" class="btn-search">Search</button>
-            </form>
+            </div>
             <div class="result">
                 <img src="./src/img/user.png" alt="User" class="img-user">
                 <div class="user-info">
                     <div class="box-user">
                         <div class="user">
                             <h1 class="name">GitHub User Name</h1>
-                            <p class="username">@username</p>
+                            <p class="username"></p>
                         </div>
-                        <p class="join">Joined 05 Jan 2021</p>
+                        <div class="box-location">
+                            <p class="text" id="location"></p>
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
                     </div>
-                    <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum cum maiores esse voluptates quas blanditiis deserunt.</p>
+                    <p class="description">User Description</p>
                     <div class="numbers">
                         <div class="box">
                             <p class="text">Repositories</p>
-                            <p class="number" id="repository">100</p>
+                            <p class="number" id="repository"></p>
                         </div>
                         <div class="box">
                             <p class="text">Followers</p>
-                            <p class="number" id="followers">100</p>
+                            <p class="number" id="followers"></p>
                         </div>
                         <div class="box">
                             <p class="text">Following</p>
-                            <p class="number" id="following">100</p>
+                            <p class="number" id="following"></p>
                         </div>
                     </div>
-                    <div class="social">
-                        <div class="box">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <p class="text" id="location">San Francisco</p>
+                    <div class="repos">
+                        <div class="repos-title">
+                            <i class="bi bi-collection"></i>
+                            <h3 class="title-repo">Repositories</h3>
                         </div>
-                        <div class="box">
-                            <i class="bi bi-twitter-x"></i>
-                            <p class="text" id="twitter">@usergithub</p>
-                        </div>
-                        <div class="box">
-                            <i class="bi bi-github"></i>
-                            <a href="https://github.com/" class="text" id="user-github">github.com/user</a>
-                        </div>
-                        <div class="box">
-                            <i class="bi bi-buildings-fill"></i>
-                            <p class="text" id="company">Company</p>
-                        </div>
+                        <ul>
+                            <li>
+                                <a href="">Tip Calculator</a>
+                            </li>
+                            <li>
+                                <a href="">Calculator JS</a>
+                            </li>
+                            <li>
+                                <a href="">Advice Generator</a>
+                            </li>
+                            <li>
+                                <a href="">Trick or Treat</a>
+                            </li>
+                            <li>
+                                <a href="">Devfinder</a>
+                            </li>
+                            <li>
+                                <a href="">Form Validation</a>
+                            </li>
+                            <li>
+                                <a href="">Tic Tac Toe</a>
+                            </li>
+                            <li>
+                                <a href="">Facebook Form</a>
+                            </li>
+                            <li>
+                                <a href="">Rating Component</a>
+                            </li>
+                            <li>
+                                <a href="">Super Mario Game</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script src="./src/js/script.js"></script>
+        <script type="module" src="./src/js/script.js"></script>
     </body>
 
 </html>
