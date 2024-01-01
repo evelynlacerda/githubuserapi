@@ -3,274 +3,303 @@
 
 body
     width: 100%
-    height: 100vh
+    height: auto
     background: root.$bg-dark
     display: flex
     justify-content: center
     align-items: center
-    @include mixins.mobile
-        padding: 1.2rem 0
 
 .container
     width: 72rem
     max-width: 95%
     height: auto
     color: root.$text-st-dark
+    margin: 4.8rem 0
+    @include mixins.mobile
+        margin: 1.6rem 0 3%
 
-    .header
-        width: 100%
-        display: flex
-        justify-content: space-between
-        align-items: center
-        margin: 0 0 4.8rem
-        @include mixins.mobile
-            margin: 0 0 2.4rem
-
-        .title
-            font-family: 'Mulish', sans-serif
-            font-size: 2rem
-            text-transform: uppercase
-            font-weight: 800
-            letter-spacing: .4rem
-
-        .theme
-            display: flex
-            align-items: center
-            font-size: 1.4rem
-            gap: .8rem
-
-            input[type='checkbox']
-                appearance: none
-                position: relative
-                width: 3.2rem
-                height: 1.6rem
-                background: root.$box-light
-                border-radius: 1.6rem
-                transition: .2s ease-in-out
-                cursor: pointer
-
-            input[type='checkbox']:checked
-                background: root.$box-dark
-
-            input[type='checkbox']::before
-                content: ""
-                position: absolute
-                width: 1.2rem
-                height: 1.2rem
-                background: root.$toogle
-                border-radius: 50%
-                top: .2rem
-                left: .2rem
-                transition: .2s ease-in-out
-
-            input:checked[type='checkbox']::before
-                left: 1.8rem
-
-    .search
-        width: 100%
-        height: 5.6rem
+.header
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 0 3.2rem
+    @include mixins.mobile
         margin: 0 0 2.4rem
-        display: flex
-        justify-content: space-between
+
+    .title
+        font-family: 'Mulish', sans-serif
+        font-size: 2rem
+        text-transform: uppercase
+        font-weight: 800
+        letter-spacing: .4rem
+
+    .theme
+        display: none
         align-items: center
-        padding: .8rem
-        background: root.$box-dark
-        border-radius: 1.2rem
-        @include mixins.mobile
-            padding: .8rem .8rem .8rem 0
+        font-size: 1.4rem
+        gap: .8rem
 
-        i
-            font-size: 2.4rem
-            color: root.$text-nd-dark
-            margin: 0 0 0 1rem
-            @include mixins.mobile
-                display: none
-
-        input
-            width: 100%
-            height: 100%
-            display: flex
-            margin: 0 1rem
-            padding: .8rem
-            background: transparent
-            font-family: 'Space Mono', monospace
-            font-size: 1.4rem
-            color: root.$text-st-dark
-            border: none
-
-            &::placeholder
-                font-family: 'Space Mono', monospace
-                color: root.$text-st-dark
-                opacity: .5
-
-            &:focus
-                outline: none
-                &::placeholder
-                    opacity: 0
-
-        .not-find
-            display: none
-            color: root.$error
-            font-size: 1.4rem
-            white-space: nowrap
-            margin: 0 1rem 0 0
-
-        .btn-search
-            width: auto
-            height: 100%
-            padding: 0 1.6rem
-            background: root.$btn-dark
-            font-family: 'Space Mono', monospace
-            font-size: 1.4rem
-            font-weight: 700
-            color: root.$text-st-dark
-            border: none
-            border-radius: .6rem
+        input[type='checkbox']
+            appearance: none
+            position: relative
+            width: 3.2rem
+            height: 1.6rem
+            background: root.$box-light
+            border-radius: 1.6rem
             transition: .2s ease-in-out
             cursor: pointer
 
-            &:hover
-                background: root.$btn-hover-dark
+        input[type='checkbox']:checked
+            background: root.$box-dark
 
-    .result
-        display: flex
-        align-items: flex-start
-        gap: 2.4rem
-        background: root.$box-dark
-        border-radius: 1.2rem
-        padding: 4.8rem
-        @include mixins.mobile
-            width: 100%
-            flex-direction: column
-            align-items: center
-            position: relative
-            padding: 2.2rem 1.6rem 1.6rem
-            gap: 1rem
-
-        .img-user
-            width: 12.4rem
-            height: 12.4rem
+        input[type='checkbox']::before
+            content: ""
+            position: absolute
+            width: 1.2rem
+            height: 1.2rem
+            background: root.$toogle
             border-radius: 50%
-            @include mixins.mobile
-                width: 8rem
-                height: 8rem
+            top: .2rem
+            left: .2rem
+            transition: .2s ease-in-out
 
-        .user-info
+        input:checked[type='checkbox']::before
+            left: 1.8rem
+
+.search-box
+    width: 100%
+    height: 5.6rem
+    margin: 0 0 2.4rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: .8rem
+    background: root.$box-dark
+    border-radius: 1.2rem
+    @include mixins.mobile
+        padding: .8rem .8rem .8rem 0
+
+    i
+        font-size: 2.4rem
+        color: root.$text-nd-dark
+        margin: 0 0 0 1rem
+        @include mixins.mobile
+            display: none
+
+    input
+        width: 100%
+        height: 100%
+        display: flex
+        margin: 0 1rem
+        padding: .8rem
+        background: transparent
+        font-family: 'Space Mono', monospace
+        font-size: 1.4rem
+        color: root.$text-st-dark
+        border: none
+
+        &::placeholder
+            font-family: 'Space Mono', monospace
+            color: root.$text-st-dark
+            opacity: .5
+
+        &:focus
+            outline: none
+            &::placeholder
+                opacity: 0
+
+    .not-found
+        display: none
+        color: root.$error
+        font-size: 1.4rem
+        white-space: nowrap
+        margin: 0 1rem 0 0
+
+    .btn-search
+        width: auto
+        height: 100%
+        padding: 0 1.6rem
+        background: root.$btn-dark
+        font-family: 'Space Mono', monospace
+        font-size: 1.4rem
+        font-weight: 700
+        color: root.$text-st-dark
+        border: none
+        border-radius: .6rem
+        transition: .2s ease-in-out
+        cursor: pointer
+
+        &:hover
+            background: root.$btn-hover-dark
+
+.result
+    display: none
+    align-items: flex-start
+    gap: 2.4rem
+    background: root.$box-dark
+    border-radius: 1.2rem
+    padding: 4.8rem
+    @include mixins.mobile
+        width: 100%
+        flex-direction: column
+        align-items: center
+        position: relative
+        padding: 2.2rem 1.6rem 1.6rem
+        gap: 1rem
+
+    .img-user
+        width: 12.4rem
+        height: 12.4rem
+        border-radius: 50%
+        @include mixins.mobile
+            width: 8rem
+            height: 8rem
+
+    .user-info
+        display: flex
+        flex-direction: column
+        width: 100%
+
+        .box-user
+            display: flex
+            justify-content: space-between
+            align-items: flex-start
+            margin: 0 0 2.4rem
+            gap: 2.4rem
+            @include mixins.mobile
+                flex-direction: column
+                align-items: center
+                margin: 0 0 3.2rem
+                gap: 1.2rem
+
+            .user
+                display: flex
+                flex-direction: column
+                @include mixins.mobile
+                    align-items: center
+
+                .name
+                    font-family: 'Mulish', sans-serif
+                    font-size: 2rem
+                    font-weight: 800
+
+                .username
+                    font-size: 1.4rem
+                    font-weight: 400
+                    color: root.$text-nd-dark
+
+            .box-location
+                display: flex
+                align-items: center
+                text-align: end
+                gap: .8rem
+                font-size: 1.4rem
+                @include mixins.mobile
+                    gap: 1.4rem
+
+                i
+                    font-size: 1.8rem
+                    @include mixins.mobile
+
+                .text
+                    font-weight: 400
+                    @include mixins.mobile
+
+        .social
+            display: flex
+            flex-direction: column
+            margin: 0 0 3.2rem
+            gap: .8rem
+
+            .box
+                display: flex
+                align-items: center
+                gap: .8rem
+                font-size: 1.4rem
+                opacity: .5
+                @include mixins.mobile
+                    gap: 1.4rem
+
+                i
+                    font-size: 1.8rem
+
+                a
+                    color: root.$text-st-dark
+
+        .description
+            font-size: 1.4rem
+            text-align: justify
+            margin: 0 0 .8rem
+            @include mixins.mobile
+                margin: 0 0 1.6rem
+
+        .numbers
+            display: flex
+            justify-content: space-between
+            padding: 1.4rem 3.2rem
+            margin: 0 0 3.2rem
+            background: root.$bg-dark
+            border-radius: .8rem
+            @include mixins.mobile
+                padding: 1rem 1.4rem
+
+            .box
+                display: flex
+                flex-direction: column
+                @include mixins.mobile
+                    align-items: center
+
+                .text
+                    font-size: 1.4rem
+                    color: root.$text-nd-dark
+                    @include mixins.mobile
+                        font-size: 1.2rem
+
+                .number
+                    font-size: 2.4rem
+                    font-weight: 700
+
+        .repos
             display: flex
             flex-direction: column
             width: 100%
+            height: auto
+            gap: .8rem
 
-            .box-user
+            .repos-title
                 display: flex
-                justify-content: space-between
-                align-items: flex-start
-                margin: 0 0 2.4rem
-                @include mixins.mobile
-                    flex-direction: column
-                    align-items: center
-                    margin: 0 0 3.2rem
-                    gap: 1.2rem
-
-                .user
-                    display: flex
-                    flex-direction: column
-                    @include mixins.mobile
-                        align-items: center
-
-                    .name
-                        font-family: 'Mulish', sans-serif
-                        font-size: 2rem
-                        font-weight: 800
-
-                    .username
-                        a
-                            font-size: 1.4rem
-                            font-weight: 400
-                            color: root.$text-nd-dark
-
-                .box-location
-                    display: flex
-                    align-items: center
-                    gap: .8rem
-                    font-size: 1.4rem
-                    @include mixins.mobile
-                        gap: 1.4rem
-
-                    .text
-                        font-weight: 400
-
-
-            .description
-                font-size: 1.4rem
-                text-align: justify
-                margin: 0 0 .8rem
-                @include mixins.mobile
-                    margin: 0 0 1.6rem
-
-            .numbers
-                display: flex
-                justify-content: space-between
-                padding: 1.4rem 3.2rem
-                margin: 0 0 3.2rem
-                background: root.$bg-dark
-                border-radius: .8rem
-                @include mixins.mobile
-                    padding: 1rem 1.4rem
-                    margin: 0 0 3.2rem
-
-                .box
-                    display: flex
-                    flex-direction: column
-                    @include mixins.mobile
-                        align-items: center
-
-                    .text
-                        font-size: 1.4rem
-                        color: root.$text-nd-dark
-                        @include mixins.mobile
-                            font-size: 1.2rem
-
-                    .number
-                        font-size: 2rem
-                        font-weight: 700
-                        @include mixins.mobile
-                            font-size: 1.8rem
-
-            .repos
-                display: flex
-                flex-direction: column
-                width: 100%
-                height: auto
+                align-items: center
                 gap: .8rem
 
-                .repos-title
+                i
+                    font-size: 1.8rem
+
+                h3
+                    font-size: 1.4rem
+                    font-weight: 400
+
+            ul
+                display: flex
+                flex-wrap: wrap
+                overflow-x: hidden
+                margin: 0 1rem 0 0
+                gap: 1rem
+
+                li
                     display: flex
                     align-items: center
-                    gap: .8rem
+                    padding: .6rem 1.2rem
+                    background: root.$bg-dark
+                    border-radius: .4rem
+                    transition: .2s ease-in-out
+                    overflow-wrap: break-word
 
-                    i
-                        font-size: 1.8rem
+                    &:hover
+                        background: darken(#1C2128, 2.5%)
 
-                    h3
-                        font-size: 1.4rem
-                        font-weight: 400
-
-                ul
-                    display: flex
-                    flex-wrap: wrap
-                    gap: .8rem
-
-                    li
-                        padding: .6rem 1.2rem
-                        background: root.$bg-dark
-                        border-radius: .4rem
-                        transition: .2s ease-in-out
-                        
-                        &:hover
-                            background: darken(#1C2128, 2.5%)
-
-                        a
-                            font-size: 1.2rem
-                            color: root.$text-nd-dark
-                            @include mixins.mobile
-                                font-size: 1rem
+                    a
+                        font-size: 1.2rem
+                        color: root.$text-nd-dark
+                        @include mixins.mobile
+                            font-size: 1rem
