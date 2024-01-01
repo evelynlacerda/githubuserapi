@@ -1,2 +1,7 @@
-#INGORE FOLDERS
+# INGORE FOLDERS
 .vscode
+
+# COLOR THEMES
+src/js/theme.js
+src/js/dark-theme.js
+src/js/light-theme.js
